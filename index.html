@@ -45,10 +45,10 @@
             <div class="portfolio1-hero-img-div">
                 <img src="./portfolio1images/portfolio1hero.png" alt="portfolio1-hero"
                     class="img-fluid portfolio-web-hero">
-                    <div class="portfolio-mobile-hero-div">
-                <img src="./portfolio1images/portfolio1mobilehero.png" alt="portfolio1-hero"
-                    class="img-fluid portfolio-mobile-hero">
-                    </div>
+                <div class="portfolio-mobile-hero-div">
+                    <img src="./portfolio1images/portfolio1mobilehero.png" alt="portfolio1-hero"
+                        class="img-fluid portfolio-mobile-hero">
+                </div>
 
             </div>
         </div>
@@ -257,7 +257,8 @@
             </div>
             <div class="col-md-4">
                 <img src="./portfolio1images/mobileapp.png" alt="mobile app image" class="mobileapp-web">
-                <img src="./portfolio1images/mobileapp-mobile.png" alt="mobile app image" class="mobileapp-mobile img-fluid">
+                <img src="./portfolio1images/mobileapp-mobile.png" alt="mobile app image"
+                    class="mobileapp-mobile img-fluid">
 
             </div>
         </div>
@@ -372,7 +373,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row  solution-sectionrow2">
             <div class="col-md-4 mb-3">
                 <div class="solution-card">
@@ -482,6 +483,578 @@
         </div>
     </div>
     <!-- case studies end  -->
+
+    <!-- our case mobile start  -->
+    <section class="portfolio1-ourcase-mobile-container container">
+        <h2 class="portfolio1-ourcase-mobile-title">Our <span>Case Studies</span></h2>
+        <div class="portfolio1-ourcase-mobile-slider">
+
+            <div class="portfolio1-ourcase-mobile-slide active">
+                <img src="./portfolio1images/protfolio1case1.png" alt="Image 1" class="portfolio1-ourcase-mobile-image">
+                <div class="portfolio1-ourcase-mobile-content">
+                    <h3 class="portfolio1-ourcase-mobile-heading">Construction Projects Bidding Platform</h3>
+                    <p class="portfolio1-ourcase-mobile-description">We reinvent the eCommerce software solution
+                        experience with AI-driven chatbots and intelligent virtual assistants that provide personalized
+                        customer.</p>
+                    <a href="#" class="portfolio1-ourcase-mobile-readmore">Read more →</a>
+                </div>
+            </div>
+
+
+            <div class="portfolio1-ourcase-mobile-slide">
+                <img src="./portfolio1images/protfolio1case1.png" alt="Image 2" class="portfolio1-ourcase-mobile-image">
+                <div class="portfolio1-ourcase-mobile-content">
+                    <h3 class="portfolio1-ourcase-mobile-heading">Taxi Booking App</h3>
+                    <p class="portfolio1-ourcase-mobile-description">We reinvent the eCommerce software solution
+                        experience with AI-driven chatbots and intelligent virtual assistants that provide personalized
+                        customer..</p>
+                    <a href="#" class="portfolio1-ourcase-mobile-readmore">Read more →</a>
+                </div>
+            </div>
+            <div class="portfolio1-ourcase-mobile-slide">
+                <img src="./portfolio1images/protfolio1case1.png" alt="Image 3" class="portfolio1-ourcase-mobile-image">
+                <div class="portfolio1-ourcase-mobile-content">
+                    <h3 class="portfolio1-ourcase-mobile-heading">Wealth Management Portal</h3>
+                    <p class="portfolio1-ourcase-mobile-description">We reinvent the eCommerce software solution
+                        experience with AI-driven chatbots and intelligent virtual assistants that provide personalized
+                        customer.</p>
+                    <a href="#" class="portfolio1-ourcase-mobile-readmore">Read more →</a>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio1-ourcase-mobile-dots">
+            <span class="portfolio1-ourcase-mobile-dot active"></span>
+            <span class="portfolio1-ourcase-mobile-dot"></span>
+            <span class="portfolio1-ourcase-mobile-dot"></span>
+        </div>
+        <div class="text-center">
+            <button>Explore More <span><i class="bi bi-arrow-right"></i></span></button>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.portfolio1-ourcase-mobile-slide');
+            const dots = document.querySelectorAll('.portfolio1-ourcase-mobile-dot');
+            let currentSlide = 0;
+
+            const showSlide = (index) => {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                    dots[i].classList.toggle('active', i === index);
+                });
+            };
+
+            const nextSlide = () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            };
+
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = i;
+                    showSlide(currentSlide);
+                });
+            });
+
+            // Auto slide
+            setInterval(nextSlide, 9000);
+
+            // Swipe functionality
+            let touchstartX = 0;
+            let touchendX = 0;
+
+            const checkSwipe = () => {
+                if (touchendX < touchstartX) nextSlide();
+                if (touchendX > touchstartX) {
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    showSlide(currentSlide);
+                }
+            };
+
+            document.querySelector('.portfolio1-ourcase-mobile-slider').addEventListener('touchstart', e => {
+                touchstartX = e.changedTouches[0].screenX;
+            });
+
+            document.querySelector('.portfolio1-ourcase-mobile-slider').addEventListener('touchend', e => {
+                touchendX = e.changedTouches[0].screenX;
+                checkSwipe();
+            });
+        });
+
+    </script>
+    <!-- our case mobile end  -->
+    <!-- faq start  -->
+    <div class="container">
+        <div class="section13layout">
+            <div class="section13header">
+                <h1 class="section13heading">Frequently Asked <span>Questions <img
+                            src="./webdev image/Rectangle 81.png" /></span></h1>
+            </div>
+            <div class="container">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <p class="accordion-item-para">Here are some of the most frequently asked questions we receive.
+                            If you can't find the answer
+                            to your question here, please don't hesitate to contact us!</p>
+                        <div class="accordion-header">
+                            <span>What technologies did you use to develop the Restaurant Management System?
+                            </span>
+                            <button class="accordion-toggle"><i class="arrow down"></i></button>
+                        </div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li><span>Front-End:</span> We leveraged React Native for this project. This
+                                    framework allows us to build native-looking mobile apps (iOS and Android) using a
+                                    single
+                                    codebase, saving development time and resources.</li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <span> Back-End:</span> We used Node.js with a PostgreSQL database. Node.js is a
+                                    JavaScript runtime
+                                    environment that excels in building real-time and scalable applications, perfect for
+                                    handling restaurant operations. PostgreSQL is a powerful, open-source relational
+                                    database
+                                    management system known for its reliability and data integrity.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>How long did it take to develop the entire Restaurant Management System?
+                            </span>
+                            <button class="accordion-toggle"><i class="arrow down"></i></button>
+                        </div>
+                        <div class="accordion-content">The development timeline for this Restaurant Management System
+                            was 4 months. This included a core feature set of:
+                            <ul>
+                                <li> Mobile app for order placement and table management by customers.</li>
+                            </ul>
+                            <ul>
+                                <li> Web app for order management, inventory control, and reporting by restaurant staff.
+                                </li>
+                            </ul>
+                            <ul>
+                                <li> Secure user authentication for both mobile and web apps.</li>
+                            </ul>
+                            <ul>
+                                <li> Integration with a payment gateway for online transactions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Can you describe the development process for this Restaurant Management System
+                                project?
+                            </span>
+                            <button class="accordion-toggle"><i class="arrow down"></i></button>
+                        </div>
+                        <div class="accordion-content">We followed an Agile development methodology with bi-weekly
+                            sprints. This involved close collaboration with the client throughout the process:
+                            <ul>
+                                <li> <span> Requirement Gathering (1 Week):</span> We conducted in-depth meetings with
+                                    the client to understand
+                                    their specific needs, functionalities desired, and any existing systems for
+                                    integration.</li>
+                            </ul>
+                            <ul>
+                                <li> <span> User Story & Wireframing (1 Week): </span>Based on the gathered
+                                    requirements, we created user
+                                    stories outlining app functionalities and detailed wireframes for both the mobile
+                                    and web
+                                    app interfaces.</li>
+                            </ul>
+                            <ul>
+                                <li> <span> Development (8 Weeks):</span> The development was divided into bi-weekly
+                                    sprints, focusing on
+                                    specific functionalities within the user stories. After each sprint, we conducted
+                                    demonstrations for the client to ensure we were on the right track and incorporated
+                                    their
+                                    feedback.</li>
+                            </ul>
+                            <ul>
+                                <li> <span> Testing & Deployment (2 Weeks): </span>Once all functionalities were
+                                    developed, we performed
+                                    rigorous testing to identify and fix any bugs. Finally, the system was deployed to
+                                    the
+                                    client's chosen cloud platform.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Was the Restaurant Management System designed to be scalable?</span>
+                            <button class="accordion-toggle"><i class="arrow down"></i></button>
+                        </div>
+                        <div class="accordion-content"><span> Absolutely. </span>The system was built as per the
+                            client’s requirement
+                            along with a modular architecture using Node.js and PostgreSQL, which allows for easy
+                            integration of new features and functionalities as the client's business grows.<br><br>
+                            <span> Additionally,</span> the cloud-based deployment on platforms like Amazon Web Services
+                            (AWS) or
+                            Google Cloud Platform (GCP) ensures the system can handle increasing data volumes and user
+                            traffic without performance issues.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Does the Restaurant Management System you built integrates with third-party
+                                services?</span>
+                            <button class="accordion-toggle"><i class="arrow down"></i></button>
+                        </div>
+                        <div class="accordion-content">Yes, the system can be integrated with various third-party
+                            services depending on the client's needs and business processes.
+                            Here are some examples:
+                            <ul>
+                                <li> <span>Online Ordering Platforms: </span>Seamless integration with services like
+                                    DoorDash or Grubhub
+                                    allows customers to order directly through those platforms and have their orders
+                                    fulfilled
+                                    by the restaurant through our system.</li>
+                            </ul>
+                            <ul>
+                                <li> <span>Delivery Services:</span> Integration with delivery service providers like
+                                    Postmates or Uber Eats
+                                    streamlines the delivery process for take-out orders.</li>
+                            </ul>
+                            <ul>
+                                <li> <span>Accounting Software: </span>The system can be integrated with accounting
+                                    software like QuickBooks
+                                    to automatically record sales transactions and simplify financial management.</li>
+                            </ul>
+                            <ul>
+                                <li> <span>Loyalty Programs: </span>Integration with loyalty program providers allows
+                                    for features like points
+                                    accumulation and redemption through the mobile app, enhancing customer engagement.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Does the Restaurant Management System that you developed offer any reporting
+                                functionalities?</span>
+                            <button class="accordion-toggle"><i class="arrow down"></i></button>
+                        </div>
+                        <div class="accordion-content">Yes, the system provides reporting functionalities as the client
+                            wanted to completely shift from traditional data storing methods to digital methods with
+                            data analysis support to analyze and optimize the whole process.
+                            Here are some examples of how they are able to track the data:
+                            <ul>
+                                <li> <span> Sales Reports:</span> Track overall sales trends, identify top-selling
+                                    items, analyze sales
+                                    performance by period or location (if applicable).</li>
+                            </ul>
+                            <ul>
+                                <li> <span>Inventory Reports: </span>Monitor inventory levels, identify low stock items,
+                                    generate purchase
+                                    orders based on usage data to optimize inventory management and minimize stockouts.
+                                </li>
+                            </ul>
+                            <ul>
+                                <li> <span>Employee Performance Reports:</span> Track staff performance metrics like
+                                    order processing speed
+                                    and accuracy to identify areas for improvement and optimize staff scheduling.</li>
+                            </ul>
+                            <ul>
+                                <li> <span>Customer Insights:</span> Analyze customer demographics, purchasing habits,
+                                    and preferences to
+                                    personalize marketing efforts and promotions.</li>
+                            </ul>
+                            These reports can be generated in various formats and exported for further analysis. Also,
+                            the system can be configured to generate automated reports and send them to the client at
+                            regular intervals. This ensures the client always has access to the latest data and insights
+                            to make informed business decisions.
+                        </div>
+                    </div>
+                    <!-- <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Can’t find any answer for your question?</span>
+                            <button class="accordion-toggle"><i class="arrow down"></i></button>
+                        </div>
+                        <div class="accordion-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+                            unde dolorum alias iure vitae delectus odit eligendi voluptatum non soluta quod distinctio
+                            ducimus, repellendus ipsam eaque a impedit quibusdam, consequuntur laboriosam aperiam
+                            aliquid. Quaerat assumenda pariatur, voluptatibus minima inventore, in tenetur aliquid
+                            voluptatum earum consequatur nam? Numquam inventore praesentium mollitia.</div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            let currentOpenAccordion = null;
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const accordionItem = this.parentElement;
+                    const accordionContent = accordionItem.querySelector('.accordion-content');
+                    const accordionToggle = accordionItem.querySelector('.accordion-toggle').querySelector('.arrow');
+
+                    // If there's an open accordion and it's not the current one, close it
+                    if (currentOpenAccordion && currentOpenAccordion !== accordionItem) {
+                        const openContent = currentOpenAccordion.querySelector('.accordion-content');
+                        const openToggle = currentOpenAccordion.querySelector('.accordion-toggle .arrow');
+
+                        openContent.style.display = 'none';
+                        openToggle.classList.remove('up');
+                        openToggle.classList.add('down');
+
+                        // Remove active class and reset styles for the previously open accordion header
+                        currentOpenAccordion.querySelector('.accordion-header').classList.remove('active');
+                        openToggle.classList.remove('white');
+                        currentOpenAccordion.querySelector('.accordion-header').classList.remove('white');
+                    }
+
+                    // Toggle the current accordion content and arrow
+                    if (accordionContent.style.display === 'block') {
+                        accordionContent.style.display = 'none';
+                        accordionToggle.classList.remove('up');
+                        accordionToggle.classList.add('down');
+                        this.classList.remove('active');
+                        accordionToggle.classList.remove('white');
+                        this.classList.remove('white');
+
+                        currentOpenAccordion = null;
+                    } else {
+                        accordionContent.style.display = 'block';
+                        accordionToggle.classList.remove('down');
+                        accordionToggle.classList.add('up');
+                        this.classList.add('active');
+                        accordionToggle.classList.add('white');
+                        this.classList.add('white');
+
+                        currentOpenAccordion = accordionItem;
+                    }
+                });
+            });
+        });
+
+    </script>
+    <!-- faq end  -->
+    <!-- form  -->
+    <div class="form-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="form-head">Get in <span class="form-touch">Touch</span></h5>
+                    <h5 class="form-top">Want to start a project with us?</h5>
+                    <p class="form-paragraph">Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos
+                        sed modi
+                        nihil aut Quis porro id suscipit quam qui excepturi dolor ut quasi voluptatem! Sed mol stias
+                        animi ad quos
+                        modi qui libero laborum ab omnis magnam.</p>
+                    <ul class="custom-list">
+                        <li class="form-point">Sed mol stias animi ad quos modi qui libero </li>
+                        <li class="form-point">Quis porro id suscipit quam qui excepturi </li>
+                        <li class="form-point">Lorem ipsum dolor sit amet. Non commodi aliquam </li>
+                    </ul>
+                    <div class="row profile-name-row align-items-center">
+                        <div class="col-md-auto image">
+                            <img src="./portfolio1images/p1.png" class="formprofile" alt="formprofile">
+                        </div>
+                        <div class="col-md-9 profile-name-column">
+                            <div class="row">
+                                <div class="col profilename">
+                                    <p>Kingston Prince</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-7 profiletext">
+                                    <p>Sales Lead</p>
+                                </div>
+                                <div class="col-4 profiletext2">
+                                    <p>sales@justlogix.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-content2 d-flex justify-content-center align-items-center">
+                    <img src="./portfolio1images/session11circle.png" class="circleimage">
+                    <div class="form-container">
+                        <h3 class="form-text">Send Your <span class="form-touch">Idea's</span></h3>
+                        <div class="form-line"></div>
+                        <form>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="firstname">First Name<span class="form-star">*</span></label>
+                                    <input id="firstname" type="text" class="form-control" name="first name">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="lastname">Last Name<span class="form-star">*</span></label>
+                                    <input id="lastname" type="text" class="form-control" name="last name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email<span class="form-star">*</span></label>
+                                <input id="email" type="email" class="form-control" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" class="form-control" name="message"
+                                    style="height: 100px;"></textarea>
+                            </div>
+                            <button type="submit" class="form-button">Start Your Project</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <img src="./portfolio1images/dot.png" class="dotimage">
+            <img src="./portfolio1images/session11arrow.png" class="arrowimage">
+        </div>
+    </div>
+    <!-- end of form  -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer-columns justify-content-between">
+                <div id="footer-column" class="col-md-2 footer-column footer-about">
+                    <h3 id="footer-head" class="mb-3 d-flex justify-content-between align-items-center">
+                        About<i class="bi bi-chevron-down footer-arrow-icon"></i>
+                    </h3>
+                    <ul id="footer-menu" class="footer-menu">
+                        <li>Who We Are</li>
+                        <li>Career</li>
+                        <li>How We Work</li>
+                        <li>Blogs</li>
+                        <li>Get in Touch</li>
+                    </ul>
+                    <hr class="footer-line">
+                </div>
+                <div id="footer-column" class="col-md-2 footer-column footer-services">
+                    <h3 id="footer-head" class="mb-3 d-flex justify-content-between align-items-center">
+                        Services<i class="bi bi-chevron-down footer-arrow-icon"></i>
+                    </h3>
+                    <ul id="footer-menu" class="footer-menu">
+                        <li>Web App Development</li>
+                        <li>Mobile App Development</li>
+                        <li>Software Development</li>
+                        <li>Support & Maintenance</li>
+                        <li>QA Testing</li>
+                        <li>DevOps</li>
+                        <li>Blog</li>
+                        <li>Cloud Services</li>
+                    </ul>
+                    <hr class="footer-line">
+                </div>
+                <div id="footer-column" class="col-md-2 footer-column footer-technologies">
+                    <h3 id="footer-head" class="mb-3 d-flex justify-content-between align-items-center">
+                        Technologies<i class="bi bi-chevron-down footer-arrow-icon"></i>
+                    </h3>
+                    <ul id="footer-menu" class="footer-menu">
+                        <li>Blockchain</li>
+                        <li>Artificial Intelligence</li>
+                        <li>AR & VR</li>
+                        <li>Cloud Computing</li>
+                        <li>Internet of Things</li>
+                        <li>more...</li>
+                    </ul>
+                    <hr class="footer-line">
+                </div>
+                <div id="footer-column" class="col-md-2 footer-column footer-industries">
+                    <h3 id="footer-head" class="mb-3 d-flex justify-content-between align-items-center">
+                        Industries<i class="bi bi-chevron-down footer-arrow-icon"></i>
+                    </h3>
+                    <ul id="footer-menu" class="footer-menu">
+                        <li>FinTech</li>
+                        <li>Banking</li>
+                        <li>Retail</li>
+                        <li>Manufacturing</li>
+                        <li>Insurance</li>
+                        <li>Real Estate</li>
+                        <li>Travel & Tourism</li>
+                        <li>Education</li>
+                    </ul>
+                    <hr class="footer-line">
+                </div>
+                <div id="footer-column" class="col-md-2 footer-column footer-portfolios">
+                    <h3 id="footer-head" class="mb-3 d-flex justify-content-between align-items-center">
+                        Portfolios<i class="bi bi-chevron-down footer-arrow-icon"></i>
+                    </h3>
+                    <ul id="footer-menu" class="footer-menu">
+                        <li>Kid's World</li>
+                        <li>Resto</li>
+                    </ul>
+                    <hr class="footer-line">
+                </div>
+            </div>
+        </div>
+        <hr class="footer-border">
+        <div class="container">
+            <div class="row justify-content-between footer-bottom-content">
+                <div class="col-md-auto">
+                    <p class="mb-0 footer-text1"><a href="#" style="color: #706E72;">Privacy Policy </a>|<a href="#"
+                            style="color: #706E72;">Terms & Conditions </a>|<a href="#" style="color: #706E72;"> Sitemap
+                        </a></p>
+                </div>
+                <!-- <div class="col-md-auto d-flex justify-content-center" >
+                <p class="footer-text2"><span class="copysymbol">&copy;
+                    
+                </span><span class="copysymbol_text">2024 All
+                        Rights
+                        Reserved - justlogix.com</span></p>
+            </div> -->
+                <div class="col-md-auto ">
+                    <p class="footer-text2"><span class="copysymbol"><img src="./portfolio1images/copyRight.png"> </span>
+                        <span class="copysymbol_text">2024 All
+                            Rights
+                            Reserved - justlogix.com</span>
+                    </p>
+                </div>
+                <div class="col-md-auto d-flex justify-content-center">
+                    <div class="footer-text3">
+                        <a href="#" class="btn btn-link icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-link icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-link icon"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="btn btn-link icon"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get all footer columns
+            var footerColumns = document.querySelectorAll('.footer-column');
+            var currentOpenMenu = null;
+
+            // Loop through each footer column
+            footerColumns.forEach(function (column) {
+                // Find the h3 element
+                var h3 = column.querySelector('h3');
+
+                // Find the ul element
+                var menu = column.querySelector('ul');
+
+                // Add click event listener to the icon
+                h3.addEventListener('click', function () {
+                    // If there's an open menu and it's not the current one, close it
+                    if (currentOpenMenu && currentOpenMenu !== menu) {
+                        currentOpenMenu.classList.remove('active');
+                        currentOpenMenu.previousElementSibling.querySelector('i').classList.add('bi-chevron-down');
+                        currentOpenMenu.previousElementSibling.querySelector('i').classList.remove('bi-chevron-up');
+                    }
+
+                    // Toggle the active class on the menu when the icon is clicked
+                    menu.classList.toggle('active');
+
+                    // Toggle the icon between chevron-down and chevron-up
+                    h3.querySelector('i').classList.toggle('bi-chevron-down');
+                    h3.querySelector('i').classList.toggle('bi-chevron-up');
+
+                    // Update the current open menu
+                    currentOpenMenu = menu.classList.contains('active') ? menu : null;
+                });
+            });
+        });
+
+    </script>
     <!-- Bootstrap JS and dependencies -->
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

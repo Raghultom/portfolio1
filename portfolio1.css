@@ -5,7 +5,7 @@ body {
 /* hero session start  */
 
 .portfolio1-hero-maindiv {
-    /* margin-top: 100px !important; */
+    margin-top: 100px !important;
     background-color: #248B970D !important;
     height: 425px !important;
     width: auto !important;
@@ -41,13 +41,20 @@ body {
 
 .portfolio-mobile-hero {
     display: none !important;
+    
 }
 
 @media (max-width:768px) {
     .portfolio-mobile-hero {
         display: block !important;
+      
     }
-
+.portfolio-mobile-hero-div{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
     .portfolio-web-hero {
         display: none !important;
     }
@@ -835,8 +842,15 @@ body {
 
 }
 
-.solution-sectionrow {
+.solution-sectionrow1 {
     margin-left: 40px !important;
+}
+
+.solution-sectionrow2 {
+    margin-top: 20px !important;
+    margin-left: 40px !important;
+    
+
 }
 
 .solution-card {
@@ -872,8 +886,20 @@ body {
 
     }
 
-    .solution-sectionrow {
+    .solution-sectionrow1 {
         margin-left: 0px !important;
+        margin-right: 0px !important;
+        
+
+    }
+
+    .solution-sectionrow2 {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        margin-top: 0px !important;
+    margin-left: 0px !important;
+        
+
 
     }
 
@@ -883,6 +909,10 @@ body {
         line-height: 17.6px;
         text-align: left;
 
+    }
+
+    .solution-card {
+        padding: 20px !important;
     }
 
     .solution-card h4 {
@@ -1050,7 +1080,7 @@ body {
         font-size: 32px;
         font-weight: 600;
         line-height: 40.22px;
-        text-align: center;
+        /* text-align: center; */
 
     }
 
